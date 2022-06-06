@@ -1,11 +1,11 @@
-import { } from '@reduxjs/toolkit';
+import {} from '@reduxjs/toolkit';
 import { Button, Col, Input, Row, Select, Tag } from 'antd';
 import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { todoListRemainingSelector } from '../../redux';
 import Todo from '../Todo';
-import { todoListSlice } from './todoListSlice';
+import { addNewTodo, todoListSlice } from './todoListSlice';
 
 export default function TodoList() {
   /**
@@ -34,7 +34,7 @@ export default function TodoList() {
   }
   function handleAddTodo() {
     dispatch(
-      addTodoList({
+      addNewTodo({
         id: uuidv4(),
         completed: false,
         name: todo,

@@ -1,33 +1,6 @@
-// export const selectorTodoList = (state) => {
-//   const { filters, todoList } = state;
-//   const { search, status, priority } = filters;
-//   return Array.from(todoList)
-//     .filter(
-//       (item) => item.name.toLowerCase().indexOf(search.toLowerCase()) > -1
-//     )
-//     .filter(
-//       (item) =>
-//         status === 'All' ||
-//         (status === 'Completed' ? item.completed : !item.completed)
-//     );
-// };
-// export const selectorTodoListFilter = (state) => {
-//     const { filters, todoList } = state;
-//     const { search, status, priority } = filters;
-//     return Array.from(todoList)
-//       .filter(
-//         (item) => item.name.toLowerCase().indexOf(search.toLowerCase()) > -1
-//       )
-//       .filter(
-//         (item) =>
-//           status === 'All' ||
-//           (status === 'Completed' ? item.completed : !item.completed)
-//       );
-//   };
-
 import { createSelector } from '@reduxjs/toolkit';
 
-export const selectorTodoList = (state) => state.todoList;
+export const selectorTodoList = (state) => state.todoList.todos;
 export const selectorFilterSearch = (state) => state.filters.search;
 export const selectorFilterStatus = (state) => state.filters.status;
 export const selectorFilterPriories = (state) => state.filters.priorities;
